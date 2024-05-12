@@ -2,7 +2,7 @@ import { useState } from 'react'
 import FormInput from './components/FormInput'
 
 const TestForm = () => {
-  console.log('re-rendered')
+  // console.log('re-rendered')
 
   const [values, setValues] = useState({
     email: '',
@@ -23,6 +23,8 @@ const TestForm = () => {
       type: 'text',
       placeholder: 'enter your email',
       label: 'email',
+      errorMessage: 'email is required',
+      required: 'true',
     },
     {
       id: 2,
@@ -49,7 +51,7 @@ const TestForm = () => {
     <>
       <div className="mx-auto" style={{ maxWidth: '400px' }}>
         <form onSubmit={handleSubmit}>
-          <h1>Form</h1>
+          <h1>Form</h1> 
           {inputs.map((input) => {
             return (
               <FormInput
